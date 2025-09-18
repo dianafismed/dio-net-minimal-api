@@ -9,11 +9,20 @@ namespace minimal_api.Dominio.Entidades
 {
     public class Administrador
     {
-        [key] // Anotação para chave primária
-        [DataBaseGenerated(DataBaseGeneratedOption.Iden)] // Anotação para auto incremento
+        [Key] // Chave primária
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Auto-incremento
         public int Id { get; set; } = default!;
+
+        [Required]
+        [StringLength(30)]
         public string Email { get; set; } = default!;
+
+        [Required]
+        [StringLength(20)]
         public string Senha { get; set; } = default!;
+
+        [Required]
+        [StringLength(10)]
         public string Perfil { get; set; } = default!;
     }
 }
