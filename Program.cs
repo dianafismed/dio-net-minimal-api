@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using minimal_api.Dominio.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
@@ -30,12 +31,4 @@ app.MapPost("/login", (LoginDTO loginDTO) =>
 });
 
 app.Run();
-
-
-public class LoginDTO
-{
-  public string Email { get; set; } = default!;
-  public string Senha { get; set; } = default!;
-}
-
 
